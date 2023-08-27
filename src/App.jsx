@@ -1,14 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import Homepage from "./Component/Homepage"
+import Navbar from "./Component/Navbar"
+import SideNavbar from "./Component/SideNavbar"
+
 
 function App() {
 
   return (
     <>
-      <div className="">
-       <h1 className='p-1 m-2 bg-red-400 text-white font-bold text-4xl'>this my name ...?</h1>
+      <div className="w-screen h-screen">
+        <Navbar/>
+        <main className="flex h-[90%]">
+          <SideNavbar/>
+          <Homepage/>
+        </main>
+      
       </div>
-    
+
     </>
   )
 }
