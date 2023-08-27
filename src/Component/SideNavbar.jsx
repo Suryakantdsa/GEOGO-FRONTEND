@@ -1,16 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SideNavbar = () => {
     return (
         <div className='hidden md:flex flex-col justify-between w-[250px] h-full bg-green-100 p-3'>
             <ul>
                 <li>
+                        <Link to={"/addmovie"} >
                     <button className='p-3 bg-green-300 rounded-xl font-bold flex items-center  '>
                         <span className="bi bi-plus-circle-dotted px-2 text-3xl font-bold"></span>
                         <span className='px-2'>
-                            Add Movie
+                         Add Movie
                         </span>
                     </button>
+                        </Link>
                 </li>
                 <li className='w-full p-2 hover:bg-green-300 mt-4'> <i className="fa-solid fa-house pr-2"></i>Home</li>
                 <li className='w-full p-2 hover:bg-green-300'> <span id="boot-icon" className="bi bi-bookmark-plus pr-2" ></span>WishList</li>

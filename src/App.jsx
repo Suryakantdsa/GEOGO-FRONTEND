@@ -1,21 +1,24 @@
-import Homepage from "./Component/Homepage"
-import Navbar from "./Component/Navbar"
-import SideNavbar from "./Component/SideNavbar"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import AddMovie from "./Component/AddMovie"
+import Body from "./Component/Body"
+import ErrorPage from "./Component/ErrorPage"
+import { Provider } from "react-redux"
+import store from "./Component/helper/Store/store"
 
 
 function App() {
 
   return (
     <>
-      <div className="w-screen h-screen">
-        <Navbar/>
-        <main className="flex h-[90%] justify-center">
-          <SideNavbar/>
-          <Homepage/>
-        </main>
-      
-      </div>
+    <Provider store={store}>
 
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Body />} errorElement={<ErrorPage/>}/>
+          <Route path='/addmovie' element={<AddMovie />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
     </>
   )
 }
