@@ -34,14 +34,14 @@ const AddMovie = () => {
             });
             console.log(response.data);
             // Reset the form data or redirect to another page
-            alert("Movie data is added sucessfully")
+            alert("Movie data is added sucessfully 👍👍")
             setLoading(false)
             navigate("/")
 
         } catch (error) {
             console.error("Error adding movie:", error);
             alert("Error adding movie:",error)
-            setLoading(true)
+            setLoading(false)
         }
     };
 

@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const MovieDetails = () => {
   const params = useParams();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [MovieDetails, setMovieDetails] = useState({});
   const {
     title,
@@ -33,17 +33,28 @@ const MovieDetails = () => {
       alert("Failed in fetching movie details..❗❗");
     }
   };
-  const deleteMovie=async()=>{
-    let result=await fetch(`https://movier-app.onrender.com/movie/${params.id}`,{
-        method:"Delete"
-    })
-    result=await result.json()
-    if(result){
-        alert("the Movie is deleted... ✅")
-        navigate("/")
+  const deleteMovie = async () => {
+    try {
+      const confirmed = window.confirm(
+        "Are you sure you want to delete this movie?"
+      );
+      if (confirmed) {
+        let result = await fetch(
+          `https://movier-app.onrender.com/movie/${params.id}`,
+          {
+            method: "Delete",
+          }
+        );
+        result = await result.json();
+        if (result) {
+          alert("The Movie is deleted...👍 ✅");
+          navigate("/");
+        }
+      }
+    } catch (error) {
+      alert("Failed to delete the movie ❗❗❗❗❗❗");
     }
-}
-
+  };
 
   return (
     <div className="w-screen h-screen">
@@ -62,7 +73,9 @@ const MovieDetails = () => {
           <button className="bg-slate-800 border-2 border-green-600 rounded-xl text-white p-2 mr-1">
             Edit Movie ✏️
           </button>
-          <button onClick={()=>deleteMovie()} className="bg-slate-800 border-2 border-green-600 rounded-xl text-white  p-2">
+          <button
+            onClick={() => deleteMovie()}
+            className="bg-slate-800 border-2 border-green-600 rounded-xl text-white  p-2">
             Delete Movie ❌
           </button>
         </div>
@@ -74,8 +87,10 @@ const MovieDetails = () => {
           className="rounded-md shadow-lg w-[300px] h-[300px] md:w-[25%] md:h-[400px] border border-orange-700 mx-4"
         />
         <div className="w-full md:w-[50%] h-[400px] border border-orange-700">
-          <video className="w-full h-[400px]" src={trailerLink} controls></video>
-            
+          <video
+            className="w-full h-[400px]"
+            src={trailerLink}
+            controls></video>
         </div>
       </div>
       <div className="mt-8 p-4 w-full bg-white rounded-lg shadow-xl">
