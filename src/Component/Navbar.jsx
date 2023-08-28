@@ -22,7 +22,8 @@ const Navbar = () => {
             <div id="searchbar" className='h-[2rem] mx-2  md:h-[2.5rem] flex justify-between bg-white w-[80%] md:w-[70%] rounded-l-full rounded-r-full'>
                 <input 
                 type="text" 
-                className='h-full w-[80%] rounded-l-full border-none outline-none'
+                className='h-full w-[80%] rounded-l-full border-none outline-none pl-4'
+                placeholder='Search movie title or genres ....'
                 />
                 <button className=' bg-green-300 w-[10%] rounded-r-full h-full '>
                 <span className="bi bi-search"></span>
