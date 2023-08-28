@@ -28,7 +28,7 @@ const AddMovie = () => {
         try {
             setLoading(true)
             const imageUrl = await useCloudinaryUpload(formData.posterImg);
-            const response = await axios.post("http://localhost:5000/addmovie", {
+            const response = await axios.post("https://movier-app.onrender.com/addmovie", {
                 ...formData,
                 posterImg: imageUrl,
             });
@@ -40,6 +40,8 @@ const AddMovie = () => {
 
         } catch (error) {
             console.error("Error adding movie:", error);
+            alert("Error adding movie:",error)
+            setLoading(true)
         }
     };
 

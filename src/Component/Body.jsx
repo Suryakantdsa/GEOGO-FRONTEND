@@ -6,7 +6,7 @@ const Body = () => {
     return (
         <div className="w-screen h-screen">
         <Navbar/>
-        <main className="flex h-[90%] justify-center">
+        <main className="flex h-[90%] justify-between">
             <SideNavbar />
             <Homepage />
         </main>

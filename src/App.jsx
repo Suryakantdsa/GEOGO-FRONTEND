@@ -4,6 +4,7 @@ import Body from "./Component/Body"
 import ErrorPage from "./Component/ErrorPage"
 import { Provider } from "react-redux"
 import store from "./Component/helper/Store/store"
+import WishList from "./Component/WishList"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Body />} errorElement={<ErrorPage/>}/>
           <Route path='/addmovie' element={<AddMovie />} />
+          <Route path='/wishlist' element={<WishList />} />
         </Routes>
       </BrowserRouter>
     </Provider>

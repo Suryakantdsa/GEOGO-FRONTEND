@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -6,6 +7,7 @@ const Navbar = () => {
             <div className='flex items-center'>
             <i className="fa-solid fa-bars text-3xl md:text-4xl ml-2 text-white"></i>
              {/* logo start   */}
+             <Link to={"/"}>
              <div className='md:flex items-center border-[2px] mx-4 border-green-300 hidden py-5 h-[2.1rem] '>
                 <span className='text-[2rem]  font-bold text-green-600'>MOVIE</span>
                 <div className='flex flex-col justify-center px-2 font-bold h-[60%]'>
@@ -13,6 +15,7 @@ const Navbar = () => {
                     <span className='text-green-600 text-[0.8rem]'>App</span>
                 </div>
             </div>
+             </Link>
             {/* ---------------log end--------------- */}
             </div>
             {/* search bar start */}
@@ -22,12 +25,14 @@ const Navbar = () => {
                 className='h-full w-[80%] rounded-l-full border-none outline-none'
                 />
                 <button className=' bg-green-300 w-[10%] rounded-r-full h-full '>
-                <span class="bi bi-search"></span>
+                <span className="bi bi-search"></span>
                 </button>
             </div>
             {/* -------------search bar end? ----------- */}
             <div id="wishlist" className='text-white mx-4 hidden md:flex'>
+                <Link to={"/wishlist"} > 
                 <span className='text-3xl'>WishList</span>
+                </Link>
                 <span id="boot-icon" className="bi bi-bookmark-plus text-4xl ml-1 text-green-500" ></span>
             </div>
         </nav>
