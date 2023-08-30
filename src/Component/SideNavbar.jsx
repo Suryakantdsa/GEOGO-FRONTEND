@@ -24,9 +24,11 @@ const SideNavbar = () => {
             WishList
           </li>
         </Link>
+        <Link to={"/recentlyview"}>
         <li className="w-full p-2 hover:bg-green-300">
           <i className="fa-solid fa-eye pr-2"></i>Recently View
         </li>
+        </Link>
       </ul>
       <div className="p-2 font-bold text-2xl bg-green-300 m-0">
         <i className="fa-solid fa-user pr-2"></i>

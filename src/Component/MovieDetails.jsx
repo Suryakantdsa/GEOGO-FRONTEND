@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addTorecentlyview } from "./helper/Store/Slice/RecentlyviewSlice";
 
 const MovieDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const dispatch=useDispatch()
   const [MovieDetails, setMovieDetails] = useState({});
   const {
     title,
@@ -29,6 +32,7 @@ const MovieDetails = () => {
       );
       result = await result.json();
       setMovieDetails(result);
+      dispatch(addTorecentlyview(result))
     } catch (error) {
       alert("Failed in fetching movie details..❗❗");
     }

@@ -16,7 +16,7 @@ const Homepage = () => {
   useEffect(() => {
     getMovieFromDB();
   }, []);
-  
+
 
 
   // get all data from database 
@@ -95,32 +95,32 @@ const Homepage = () => {
           </button>
           <button
             onClick={() => filterMovie("Horror")}
-            className="bg-green-100 mr-4 font-bold px-2 rounded-md">
+            className="bg-green-100 mr-4 font-bold px-2 rounded-md hover:bg-red-200">
             Horror
           </button>
           <button
             onClick={() => filterMovie("Action")}
-            className="bg-green-100 mr-4 font-bold px-2 rounded-md">
+            className="bg-green-100 mr-4 font-bold px-2 rounded-md hover:bg-red-200">
             Action
           </button>
           <button
             onClick={() => filterMovie("Drama")}
-            className="bg-green-100 mr-4 font-bold px-2 rounded-md">
+            className="bg-green-100 mr-4 font-bold px-2 rounded-md hover:bg-red-200">
             Drama
           </button>
           <button
             onClick={() => filterMovie("Romance")}
-            className="bg-green-100 mr-4 font-bold px-2 rounded-md">
+            className="bg-green-100 mr-4 font-bold px-2 rounded-md hover:bg-red-200">
             Romance
           </button>
           <button
             onClick={() => filterMovie("Comedy")}
-            className="bg-green-100 mr-4 font-bold px-2 rounded-md">
+            className="bg-green-100 mr-4 font-bold px-2 rounded-md hover:bg-red-200">
             Comedy
           </button>
           <button
             onClick={() => filterMovie("Thriller")}
-            className="bg-green-100 mr-4 font-bold px-2 rounded-md">
+            className="bg-green-100 mr-4 font-bold px-2 rounded-md hover:bg-red-200">
             Thriller
           </button>
         </div>

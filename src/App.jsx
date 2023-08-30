@@ -6,6 +6,7 @@ import { Provider } from "react-redux"
 import store from "./Component/helper/Store/store"
 import WishList from "./Component/WishList"
 import MovieDetails from "./Component/MovieDetails.jsx"
+import RecentlyView from "./Component/RecentlyView"
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Body />} errorElement={<ErrorPage/>}/>
           <Route path='/addmovie' element={<AddMovie />} />
           <Route path='/wishlist' element={<WishList />} />
+          <Route path='/recentlyview' element={<RecentlyView />} />
           <Route path='/movie/:id' element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>

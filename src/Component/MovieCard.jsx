@@ -7,7 +7,7 @@ const MovieCard = ({ movie }) => {
   const { title, posterImg, releaseYear, _id,genres,duration } = movie;
   const dispatch=useDispatch()
   return (
-    <div className="w-[300px] h-[450px] md:w-[250px] md:h-[450px] flex flex-col p-2 m-2 border border-green-500 rounded-md shadow-xl">
+    <div className="w-[300px] h-[450px] md:w-[250px] md:h-[450px] flex flex-col p-2 m-2 border border-green-500 rounded-md shadow-xl hover:scale-105">
       <Link className=" h-[65%] " to={`movie/${_id}`}>
         <img
           src={posterImg}
