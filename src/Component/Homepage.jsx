@@ -16,7 +16,10 @@ const Homepage = () => {
   useEffect(() => {
     getMovieFromDB();
   }, []);
+  
 
+
+  // get all data from database 
   const getMovieFromDB = async () => {
     try {
       setOn(true);
@@ -46,26 +49,30 @@ const Homepage = () => {
       dispatch(addMoviesfromDb(masterData));
     }
   };
+
+
   const handleSortChange = (event) => {
     setSelectedSort(event.target.value);
     sortMovie(); 
   };
+
+  // sorting function here
   const sortMovie=()=>{
         switch (selectedSort) {
-          case "2014":
-            const below= movieData.filter((movie) => movie.releaseYear <= 2014);
+          case "below":
+            const below= masterData.filter((movie) => movie.releaseYear>=2014);
             dispatch(addMoviesfromDb(below));
             break;
-          case "2015":
-            const above= movieData.filter((movie) => movie.releaseYear >= 2015);
+          case "above":
+            const above= masterData.filter((movie) => movie.releaseYear <= 2015);
             dispatch(addMoviesfromDb(above));
             break;
           case "new":
-            const newest= [...movieData].sort((a, b) =>a.releaseYear -b.releaseYear );
+            const newest= [...masterData].sort((a, b) =>a.releaseYear -b.releaseYear );
             dispatch(addMoviesfromDb(newest));
             break;
           case "old":
-            const oldest= [...movieData].sort((a, b) => b.releaseYear-a.releaseYear  );
+            const oldest= [...masterData].sort((a, b) => b.releaseYear-a.releaseYear  );
             dispatch(addMoviesfromDb(oldest));
             break;
           default:
@@ -130,8 +137,8 @@ const Homepage = () => {
             <option value="">List the movies</option>
             <option value="new">Newest first</option>
             <option value="old">Oldest first</option>
-            <option value="2014">2015 year or below</option>
-            <option value="2015">2015 year or above</option>
+            <option value="below">2015 year or below</option>
+            <option value="above">2015 year or above</option>
           </select>
         </div>
       </section>
