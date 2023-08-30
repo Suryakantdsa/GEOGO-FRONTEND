@@ -15,13 +15,17 @@ const Navbar = () => {
   const masterData = useSelector((store) => store.masterData);
 
   const searchMovie = (payload) => {
-    // const data = ;
-    const searchRes = masterData.filter((all) =>
-      all?.title.toLowerCase().includes(payload.toLowerCase())
-    );
-
+    const searchTerm = payload.toLowerCase();
+    const searchRes = masterData.filter((item) => {
+      const titleMatch = item.title.toLowerCase().includes(searchTerm);
+      const genresMatch = item.genres.toLowerCase().includes(searchTerm);
+      return titleMatch || genresMatch;
+    });
+  
     dispatch(addMoviesfromDb(searchRes));
   };
+  
+  
   return (
     <nav className="h-[10%] flex px-1 py-2 md:justify-between justify-center items-center bg-black">
       <div className="flex items-center">
